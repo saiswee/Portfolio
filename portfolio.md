@@ -35,11 +35,10 @@
 
 # 🚀 Projects
 
-- 🤖 AI-Powered Personalized Learning Platform  
-- 🌾 Smart Irrigation System for Efficient Water Management  
-- 🗑️ Smart Talking Dustbin (Smart Waste System)  
-- 🚑 Emergency Response App for Road Accidents  
-- 📊 Algorithm Identification Using AI/ML  
+- Algorithm Identification Using AI/ML
+- Smart Cigarette Smoke Detector
+- Innovative IoT-Based Solutions
+
 
 ---
 
@@ -47,11 +46,11 @@
 
 <p align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=github_dark" />
+<img src="https://github-readme-stats.vercel.app/api?username=saiswee&show_icons=true&theme=github_dark" />
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=github_dark" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=saiswee&layout=compact&theme=github_dark" />
 
-<img src="https://streak-stats.demolab.com?user=YOUR_USERNAME&theme=github-dark" />
+<img src="https://streak-stats.demolab.com?user=saiswee&theme=github-dark" />
 
 </p>
 
@@ -67,9 +66,9 @@
 
 # 📬 Connect With Me
 
-- 📧 Email: your-email@example.com  
-- 💼 LinkedIn: https://linkedin.com/in/your-profile  
-- 💻 GitHub: https://github.com/YOUR_USERNAME  
+- 📧 Email: saiswee207@gmail.com 
+- 💼 LinkedIn: https://linkedin.com/in/saiswee-chandaraju  
+- 💻 GitHub: https://github.com/saiswee  
 
 ---
 
