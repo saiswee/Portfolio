@@ -7,3 +7,6 @@
 ![AI](https://img.shields.io/badge/AI-Machine%20Learning-orange?style=flat-square)
 ![ML](https://img.shields.io/badge/ML-TensorFlow-red?style=flat-square)
 ![IoT](https://img.shields.io/badge/IoT-Smart%20Systems-green?style=flat-square)
+## 🚀 My GitHub Portfolio is Active
+
+This project is now connected with GitHub using Git & VS Code.
