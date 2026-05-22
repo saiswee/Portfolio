@@ -5,7 +5,7 @@
 ---
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,c,java,html,css,javascript,git,github,linux,tensorflow" />
+  <img src="https://skillicons.dev/icons?i=python,c,java,html,css,javascript,git,github" />
 </p>
 
 ---
