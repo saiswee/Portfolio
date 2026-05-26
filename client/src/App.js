@@ -1,7 +1,5 @@
 import "./App.css";
-
 function App() {
-  function App() {
 
   const scrollToProjects = () => {
     document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
