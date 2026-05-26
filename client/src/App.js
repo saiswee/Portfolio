@@ -1,6 +1,27 @@
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import "./App.css";
 
 function App() {
+  const form = useRef();
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "YOUR_SERVICE_ID",
+    "YOUR_TEMPLATE_ID",
+    form.current,
+    "YOUR_PUBLIC_KEY"
+  )
+  .then(() => {
+    alert("Message sent successfully!");
+    form.current.reset();
+  })
+  .catch(() => {
+    alert("Failed to send message");
+  });
+};
   const scrollToProjects = () => {
     document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
   };
@@ -104,19 +125,37 @@ function App() {
       </section>
 
       {/* CONTACT */}
-      <section className="section" id="contact">
-        <h2>Contact Me</h2>
+<section className="section" id="contact">
+  <h2>Contact Me</h2>
 
-        <p>Email: saiswee207@gmail.com</p>
+  <form ref={form} onSubmit={sendEmail} className="contact-form">
 
-        <a
-          href="mailto:saiswee207@gmail.com"
-          className="contact-btn"
-        >
-          Send Email
-        </a>
-      </section>
+    <input
+      type="text"
+      name="user_name"
+      placeholder="Your Name"
+      required
+    />
 
+    <input
+      type="email"
+      name="user_email"
+      placeholder="Your Email"
+      required
+    />
+
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      required
+    />
+
+    <button type="submit">
+      Send Message
+    </button>
+
+  </form>
+</section>
     </div>
   );
 }
