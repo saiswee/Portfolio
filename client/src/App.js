@@ -44,16 +44,16 @@ function App() {
       {/* ABOUT */}
       <section className="section">
         <h2>About Me</h2>
-        <p>
-          🎓 Third-Year Engineering Student  
-💻 Python Developer | AI & ML Enthusiast | IoT Builder  
-🚀 Passionate about building real-world intelligent systems  
-
-- 🔭 Working on AI, ML & IoT projects  
-- 🌱 Improving DSA, ML models & system design  
-- 🧠 Interested in smart automation & problem solving  
-- 🎯 Goal: AI/ML Engineer / Software Developer  
-  </p>
+       <p>
+  🎓 Third-Year Engineering Student<br />
+  💻 Python Developer | AI & ML Enthusiast | IoT Builder<br />
+  🚀 Passionate about building real-world intelligent systems<br />
+  <br />
+  - 🔭 Working on AI, ML & IoT projects<br />
+  - 🌱 Improving DSA, ML models & system design<br />
+  - 🧠 Interested in smart automation & problem solving<br />
+  - 🎯 Goal: AI/ML Engineer / Software Developer<br />
+</p>
       </section>
 
       {/* SKILLS */}
