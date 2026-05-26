@@ -9,10 +9,9 @@ function App() {
       
     },
     {
-      title: "To-Do App",
-      desc: "Task management app using React",
-      github: "https://github.com/yourusername/todo",
-      
+      title: "Python Mini Projects",
+      desc: "Calculator, Password Generator, To-Do List (CLI apps built using Python)",
+      github: "https://github.com/saiswee/codsoft",
     },
   ];
 
