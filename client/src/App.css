@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+/* overall container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  background: #111827;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 45px;
+}
+
+.hero h3 {
+  color: #38bdf8;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* sections */
+.section {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* skills */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  background: #1e293b;
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* project cards */
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  width: 260px;
+  border-radius: 15px;
+  text-align: left;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: #334155;
+}
+
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+.section {
+  margin-top: 80px;
+}
+.card-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.card-buttons a {
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+}
+
+.card-buttons a:hover {
+  background: #0ea5e9;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #38bdf8;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.contact-btn:hover {
+  background: #0ea5e9;
+}
