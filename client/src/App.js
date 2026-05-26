@@ -1,6 +1,24 @@
 import "./App.css";
 
 function App() {
+  function App() {
+
+  const scrollToProjects = () => {
+    document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  };
+
+  const projects = [
+    ...
+  ];
+
+  return (
+    ...
+  );
+}
   const projects = [
     {
       title: "Portfolio Website",
@@ -28,10 +46,15 @@ function App() {
         <h3>Full Stack Developer | AI & ML Enthusiast | IoT Builder | Python Developer</h3>
         <p>I build scalable web apps using React, Node.js, and AI tools.</p>
 
-        <div className="buttons">
-          <button>View Projects</button>
-          <button className="secondary">Contact Me</button>
-        </div>
+       <div className="buttons">
+  <button onClick={scrollToProjects}>
+    View Projects
+  </button>
+
+  <button className="secondary" onClick={scrollToContact}>
+    Contact Me
+  </button>
+</div>
       </header>
       <a
   href="https://github.com/saiswee"
@@ -75,7 +98,7 @@ function App() {
       </section>
 
       {/* PROJECTS */}
-      <section className="section">
+      <section className="section" id="projects">
         <h2>Projects</h2>
 
         <div className="projects">
@@ -94,7 +117,7 @@ function App() {
         </div>
       </section>
       {/* CONTACT */}
-<section className="section">
+<section className="section" id="contact">
   <h2>Contact Me</h2>
 
   <p>Email: saiswee207@gmail.com</p>
