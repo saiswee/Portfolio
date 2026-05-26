@@ -43,18 +43,21 @@ function App() {
 
       {/* ABOUT */}
       <section className="section">
-        <h2>About Me</h2>
-       <p>
-  🎓 Third-Year Engineering Student<br />
-  💻 Python Developer | AI & ML Enthusiast | IoT Builder<br />
-  🚀 Passionate about building real-world intelligent systems<br />
-  <br />
-  - 🔭 Working on AI, ML & IoT projects<br />
-  - 🌱 Improving DSA, ML models & system design<br />
-  - 🧠 Interested in smart automation & problem solving<br />
-  - 🎯 Goal: AI/ML Engineer / Software Developer<br />
-</p>
-      </section>
+  <h2>About Me</h2>
+
+  <p>
+    🎓 Third-Year Engineering Student<br />
+    💻 Python Developer | AI & ML Enthusiast | IoT Builder<br />
+    🚀 Passionate about building real-world intelligent systems
+  </p>
+
+  <ul>
+    <li>🔭 Working on AI, ML & IoT projects</li>
+    <li>🌱 Improving DSA, ML models & system design</li>
+    <li>🧠 Interested in smart automation & problem solving</li>
+    <li>🎯 Goal: AI/ML Engineer / Software Developer</li>
+  </ul>
+</section>
 
       {/* SKILLS */}
       <section className="section">
