@@ -5,7 +5,7 @@ function App() {
     {
       title: "Portfolio Website",
       desc: "Personal full-stack portfolio built with React",
-      github: "https://github.com/saiswee/portfolio",
+      github: "https://github.com/saiswee/portfolio/client",
       
     },
     {
@@ -25,7 +25,7 @@ function App() {
       {/* HERO */}
       <header className="hero">
         <h1>Hi, I'm Saiswee 👋</h1>
-        <h3>Full Stack Developer | AI Enthusiast</h3>
+        <h3>Full Stack Developer | AI & ML Enthusiast | IoT Builder | Python Developer</h3>
         <p>I build scalable web apps using React, Node.js, and AI tools.</p>
 
         <div className="buttons">
@@ -45,9 +45,15 @@ function App() {
       <section className="section">
         <h2>About Me</h2>
         <p>
-          I am an engineering student learning full-stack development and
-          building projects.
-        </p>
+          🎓 Third-Year Engineering Student  
+💻 Python Developer | AI & ML Enthusiast | IoT Builder  
+🚀 Passionate about building real-world intelligent systems  
+
+- 🔭 Working on AI, ML & IoT projects  
+- 🌱 Improving DSA, ML models & system design  
+- 🧠 Interested in smart automation & problem solving  
+- 🎯 Goal: AI/ML Engineer / Software Developer  
+  </p>
       </section>
 
       {/* SKILLS */}
@@ -59,6 +65,12 @@ function App() {
           <li>JavaScript</li>
           <li>React</li>
           <li>Node.js</li>
+        <li>Python</li>  
+<li>C Programming</li>  
+<li>Machine Learning</li>  
+<li>Data Structures & Algorithms</li>  
+<li>Git & GitHub</li>  
+<li>IoT & Sensors</li>
         </ul>
       </section>
 
