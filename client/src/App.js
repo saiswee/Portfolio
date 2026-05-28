@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import emailjs from "@emailjs/browser";
 import { useRef, useEffect, useState } from "react";
 import "./App.css";
