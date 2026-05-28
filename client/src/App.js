@@ -122,7 +122,7 @@ function App() {
 
       {/* HERO */}
       <section className="hero">
-<img className="profile-img" src={profileImg} alt="" />
+<img className="profile-img" src={profileImg} alt="portfolio image" />
 
   <p className="hero-kicker">
     AI ENGINEER • FULL STACK DEVELOPER • SYSTEM BUILDER
@@ -224,7 +224,7 @@ function App() {
         {photos.map((img, i) => (
           <SwiperSlide key={i}>
             <div className="slide-card">
-              <img src={img} alt="" />
+              <img src={img} alt="photography work" />
             </div>
           </SwiperSlide>
         ))}
@@ -244,7 +244,7 @@ function App() {
         {drawings.map((img, i) => (
           <SwiperSlide key={i}>
             <div className="slide-card">
-             <img src={img} alt="" />
+             <img src={img} alt="drawing work" />
             </div>
           </SwiperSlide>
         ))}
