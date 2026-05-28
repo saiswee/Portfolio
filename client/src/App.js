@@ -73,11 +73,14 @@ function App() {
 
   /* smooth scroll */
   const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  const yOffset = -80; // navbar height offset
+  const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
 
   /* projects */
   const projects = [
