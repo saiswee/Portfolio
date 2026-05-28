@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+
 import profileImg from "./assets/profile.jpeg";
 
 /* IMAGES */
@@ -34,19 +35,32 @@ import drawing10 from "./assets/drawing10.jpeg";
 
 function App() {
   const form = useRef();
-
   const [showTop, setShowTop] = useState(false);
 
-  /* scroll button logic */
+  /* scroll button */
   useEffect(() => {
     const handleScroll = () => {
       setShowTop(window.scrollY > 300);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  /* FIXED SCROLL FUNCTION */
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const yOffset = -80;
+    const y =
+      element.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  /* scroll to top */
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -71,17 +85,6 @@ function App() {
       });
   };
 
-  /* smooth scroll */
-  const scrollTo = (id) => {
-  const element = document.getElementById(id);
-  if (!element) return;
-
-  const yOffset = -80; // navbar height offset
-  const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-  window.scrollTo({ top: y, behavior: "smooth" });
-};
-
   /* projects */
   const projects = [
     {
@@ -96,14 +99,13 @@ function App() {
     },
   ];
 
-  /* photo array */
+  /* images */
   const photos = [
     photo1, photo2, photo3, photo4, photo5,
     photo6, photo7, photo10, photo11,
     photo12, photo13, photo14,
   ];
 
-  /* drawing array */
   const drawings = [
     drawing1, drawing2, drawing3, drawing4, drawing5,
     drawing6, drawing7, drawing8, drawing9, drawing10,
@@ -117,77 +119,51 @@ function App() {
         <h2 className="logo">Saiswee.dev</h2>
 
         <div className="nav-links">
-          <span onClick={() => scrollTo("projects")}>Projects</span>
-          <span onClick={() => scrollTo("creative")}>Creative</span>
-          <span onClick={() => scrollTo("contact")}>Contact</span>
+          <span onClick={() => scrollToSection("projects")}>Projects</span>
+          <span onClick={() => scrollToSection("creative")}>Creative</span>
+          <span onClick={() => scrollToSection("contact")}>Contact</span>
         </div>
       </nav>
 
       {/* HERO */}
       <section className="hero">
-<img className="profile-img" src={profileImg} alt="portfolio" />
+        <img className="profile-img" src={profileImg} alt="portfolio" />
 
-  <p className="hero-kicker">
-    AI ENGINEER • FULL STACK DEVELOPER • SYSTEM BUILDER
-  </p>
+        <p className="hero-kicker">
+          AI ENGINEER • FULL STACK DEVELOPER • SYSTEM BUILDER
+        </p>
 
-  <h1 className="hero-title">
-    I build intelligent systems that turn ideas into production-ready products.
-  </h1>
+        <h1 className="hero-title">
+          I build intelligent systems that turn ideas into production-ready products.
+        </h1>
 
-  <p className="hero-subtitle">
-    I specialize in full-stack development, AI/ML systems, and IoT automation.
-  </p>
+        <p className="hero-subtitle">
+          I specialize in full-stack development, AI/ML systems, and IoT automation.
+        </p>
 
-  <div className="hero-points">
-    <p>⚡ AI + ML systems that solve real problems</p>
-    <p>⚡ Scalable full-stack applications</p>
-    <p>⚡ IoT & automation engineering</p>
-  </div>
-
-  <p className="hero-line">
-    Build fast. Think deep. Ship real systems.
-  </p>
-
-  <div className="hero-buttons">
-    <button onClick={() => scrollTo("projects")}>View Work</button>
-    <button className="secondary" onClick={() => scrollTo("contact")}>
-      Contact
-    </button>
-  </div>
-
-</section>
+        <div className="hero-buttons">
+          <button onClick={() => scrollToSection("projects")}>View Work</button>
+          <button className="secondary" onClick={() => scrollToSection("contact")}>
+            Contact
+          </button>
+        </div>
+      </section>
 
       {/* ABOUT */}
       <section className="section">
-  <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">About Me</h2>
 
-  <div className="about-card">
-    <p>
-      I’m an engineering student focused on building intelligent systems using
-      AI, full-stack development, and IoT.
-    </p>
+        <div className="about-card">
+          <p>Engineering student focused on AI, Full Stack & IoT systems.</p>
+          <p>Turning ideas into real-world scalable products.</p>
+          <p>System thinking: build, break, scale, improve.</p>
+          <p>Currently exploring AI + software engineering.</p>
 
-    <p>
-      I enjoy turning complex ideas into clean, usable, real-world products that
-      feel simple but are deeply engineered under the hood.
-    </p>
-
-    <p>
-      My work revolves around system thinking — understanding how things break,
-      how they scale, and how they can be improved.
-    </p>
-
-    <p>
-      Currently exploring AI + software engineering to build production-ready,
-      impactful applications.
-    </p>
-
-    <p className="about-highlight">
-      Goal: Become an AI Engineer who builds real systems, not just projects.
-    </p>
-  </div>
-</section>
+          <p className="about-highlight">
+            Goal: Become an AI Engineer who builds real systems.
+          </p>
+        </div>
+      </section>
 
       {/* PROJECTS */}
       <section className="section" id="projects">
@@ -198,7 +174,6 @@ function App() {
             <div className="case-card" key={i}>
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
-
               <a href={p.github} target="_blank" rel="noreferrer">
                 GitHub →
               </a>
@@ -207,56 +182,44 @@ function App() {
         </div>
       </section>
 
-      {/* ================= CREATIVE ================= */}
-<section className="section" id="creative">
+      {/* CREATIVE */}
+      <section className="section" id="creative">
+        <h2 className="section-title">Creative Works</h2>
 
-  <h2 className="section-title">Creative Works</h2>
+        <div className="dual-slider">
 
-  <div className="dual-slider">
+          {/* PHOTOS */}
+          <div className="slider-box">
+            <h3 className="slider-title">Photography</h3>
 
-    {/* PHOTOGRAPHY SLIDER */}
-    <div className="slider-box">
-      <h3 className="slider-title">Photography</h3>
+            <Swiper modules={[Navigation]} navigation slidesPerView={1}>
+              {photos.map((img, i) => (
+                <SwiperSlide key={i}>
+                  <div className="slide-card">
+                    <img src={img} alt="photo" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-      <Swiper
-        modules={[Navigation]}
-        navigation
-        spaceBetween={10}
-        slidesPerView={1}
-      >
-        {photos.map((img, i) => (
-          <SwiperSlide key={i}>
-            <div className="slide-card">
-              <img src={img} alt="photography" />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          {/* DRAWINGS */}
+          <div className="slider-box">
+            <h3 className="slider-title">Drawings</h3>
 
-    {/* DRAWINGS SLIDER */}
-    <div className="slider-box">
-      <h3 className="slider-title">Drawings</h3>
+            <Swiper modules={[Navigation]} navigation slidesPerView={1}>
+              {drawings.map((img, i) => (
+                <SwiperSlide key={i}>
+                  <div className="slide-card">
+                    <img src={img} alt="drawing" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-      <Swiper
-        modules={[Navigation]}
-        navigation
-        spaceBetween={10}
-        slidesPerView={1}
-      >
-        {drawings.map((img, i) => (
-          <SwiperSlide key={i}>
-            <div className="slide-card">
-             <img src={img} alt="darwing work"/>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-
-  </div>
-
-</section>
+        </div>
+      </section>
 
       {/* CONTACT */}
       <section className="section" id="contact">
@@ -265,30 +228,18 @@ function App() {
         <div className="contact-layout">
 
           <div className="contact-info">
+            <h3>Let's Connect</h3>
+            <p>📱 +91 8008207324</p>
+            <p>📧 saiswee207@gmail.com</p>
 
-  <h3>Let's Connect</h3>
+            <a href="https://www.linkedin.com/in/saiswee-chandaraju" target="_blank">
+              🔗 LinkedIn
+            </a>
 
-  <p>📱 +91 8008207324</p>
-
-  <p>📧 saiswee207@gmail.com</p>
-
-  <a
-    href="https://www.linkedin.com/in/saiswee-chandaraju"
-    target="_blank"
-    rel="noreferrer"
-  >
-    🔗 LinkedIn Profile
-  </a>
-
-  <a
-    href="https://github.com/saiswee"
-    target="_blank"
-    rel="noreferrer"
-  >
-    💻 GitHub Profile
-  </a>
-
-</div>
+            <a href="https://github.com/saiswee" target="_blank">
+              💻 GitHub
+            </a>
+          </div>
 
           <form ref={form} onSubmit={sendEmail} className="contact-form">
             <input name="user_name" placeholder="Your Name" required />
@@ -302,16 +253,15 @@ function App() {
 
       {/* FOOTER */}
       <footer className="footer">
-  <p>© 2026 Saiswee.dev — Crafted with React</p>
-</footer>
+        <p>© 2026 Saiswee.dev</p>
+      </footer>
 
-      {/* SCROLL TO TOP */}
+      {/* SCROLL TOP */}
       {showTop && (
         <button className="scroll-top" onClick={scrollToTop}>
           ↑
         </button>
       )}
-
     </div>
   );
 }
