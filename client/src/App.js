@@ -127,7 +127,7 @@ function App() {
 
       {/* HERO */}
       <section className="hero">
-        <img className="profile-img" src={profileImg} alt="profile" />
+        <img className="profile-img" src={profileImg} alt="portfolio" />
 
         <p className="hero-kicker">
           AI ENGINEER • FULL STACK DEVELOPER • SYSTEM BUILDER
@@ -196,7 +196,7 @@ function App() {
               {photos.map((img, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-card">
-                    <img src={img} alt="photo" />
+                    <img src={img} alt="photography" />
                   </div>
                 </SwiperSlide>
               ))}
@@ -232,11 +232,11 @@ function App() {
             <p>📱 +91 8008207324</p>
             <p>📧 saiswee207@gmail.com</p>
 
-            <a href="https://www.linkedin.com/in/saiswee-chandaraju" target="_blank">
+            <a href="https://www.linkedin.com/in/saiswee-chandaraju" target="_blank" rel="noopener noreferrer">
               🔗 LinkedIn
             </a>
 
-            <a href="https://github.com/saiswee" target="_blank">
+            <a href="https://github.com/saiswee" target="_blank" rel="noopener noreferrer">
               💻 GitHub
             </a>
           </div>
