@@ -122,7 +122,7 @@ function App() {
 
       {/* HERO */}
       <section className="hero">
-<img className="profile-img" src={profileImg} alt="profile" />
+<img className="profile-img" src={profileImg} alt="" />
 
   <p className="hero-kicker">
     AI ENGINEER • FULL STACK DEVELOPER • SYSTEM BUILDER
