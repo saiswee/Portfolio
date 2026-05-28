@@ -1,161 +1,314 @@
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import "./App.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import profileImg from "./assets/profile.jpeg";
+
+/* IMAGES */
+import photo1 from "./assets/photo1.jpeg";
+import photo2 from "./assets/photo2.jpeg";
+import photo3 from "./assets/photo3.jpeg";
+import photo4 from "./assets/photo4.jpeg";
+import photo5 from "./assets/photo5.jpeg";
+import photo6 from "./assets/photo6.jpeg";
+import photo7 from "./assets/photo7.jpeg";
+import photo10 from "./assets/photo10.jpeg";
+import photo11 from "./assets/photo11.jpeg";
+import photo12 from "./assets/photo12.jpeg";
+import photo13 from "./assets/photo13.jpeg";
+import photo14 from "./assets/photo14.jpeg";
+
+import drawing1 from "./assets/drawing1.jpeg";
+import drawing2 from "./assets/drawing2.jpeg";
+import drawing3 from "./assets/drawing3.jpeg";
+import drawing4 from "./assets/drawing4.jpeg";
+import drawing5 from "./assets/drawing5.jpeg";
+import drawing6 from "./assets/drawing6.jpeg";
+import drawing7 from "./assets/drawing7.jpeg";
+import drawing8 from "./assets/drawing8.jpeg";
+import drawing9 from "./assets/drawing9.jpeg";
+import drawing10 from "./assets/drawing10.jpeg";
 
 function App() {
   const form = useRef();
 
-const sendEmail = (e) => {
-  e.preventDefault();
+  const [showTop, setShowTop] = useState(false);
 
-  emailjs.sendForm(
-    "YOUR_SERVICE_ID",
-    "YOUR_TEMPLATE_ID",
-    form.current,
-    "YOUR_PUBLIC_KEY"
-  )
-  .then(() => {
-    alert("Message sent successfully!");
-    form.current.reset();
-  })
-  .catch(() => {
-    alert("Failed to send message");
-  });
-};
-  const scrollToProjects = () => {
-    document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+  /* scroll button logic */
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const scrollToContact = () => {
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  /* email */
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_2fmdlm3",
+        "template_sy3jkfu",
+        form.current,
+        "Zmuj6OHv-CipqGci3"
+      )
+      .then(() => {
+        alert("Message sent successfully!");
+        form.current.reset();
+      })
+      .catch(() => {
+        alert("Failed to send message");
+      });
   };
 
+  /* smooth scroll */
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  /* projects */
   const projects = [
     {
       title: "Portfolio Website",
-      desc: "Personal full-stack portfolio built with React",
-      github: "https://github.com/saiswee/Portfolio"
+      desc: "Personal React portfolio with modern UI",
+      github: "https://github.com/saiswee/Portfolio",
     },
     {
       title: "Python Mini Projects",
-      desc: "Calculator, Password Generator, To-Do List (CLI apps built using Python)",
-      github: "https://github.com/saiswee/codsoft"
-    }
+      desc: "CLI apps: Calculator, Password Generator, To-Do List",
+      github: "https://github.com/saiswee/codsoft",
+    },
+  ];
+
+  /* photo array */
+  const photos = [
+    photo1, photo2, photo3, photo4, photo5,
+    photo6, photo7, photo10, photo11,
+    photo12, photo13, photo14,
+  ];
+
+  /* drawing array */
+  const drawings = [
+    drawing1, drawing2, drawing3, drawing4, drawing5,
+    drawing6, drawing7, drawing8, drawing9, drawing10,
   ];
 
   return (
-    <div className="container">
+    <div className="app">
 
       {/* NAVBAR */}
       <nav className="navbar">
-        <h2>My Portfolio</h2>
+        <h2 className="logo">Saiswee.dev</h2>
+
+        <div className="nav-links">
+          <span onClick={() => scrollTo("projects")}>Projects</span>
+          <span onClick={() => scrollTo("creative")}>Creative</span>
+          <span onClick={() => scrollTo("contact")}>Contact</span>
+        </div>
       </nav>
 
       {/* HERO */}
-      <header className="hero">
-        <h1>Hi, I'm Saiswee 👋</h1>
-        <h3>Full Stack Developer | AI & ML Enthusiast | IoT Builder | Python Developer</h3>
-        <p>I build scalable web apps using React, Node.js, and AI tools.</p>
+      <section className="hero">
+<img className="profile-img" src={profileImg} alt="profile" />
 
-        <div className="buttons">
-          <button onClick={scrollToProjects}>
-            View Projects
-          </button>
+  <p className="hero-kicker">
+    AI ENGINEER • FULL STACK DEVELOPER • SYSTEM BUILDER
+  </p>
 
-          <button className="secondary" onClick={scrollToContact}>
-            Contact Me
-          </button>
-        </div>
-      </header>
+  <h1 className="hero-title">
+    I build intelligent systems that turn ideas into production-ready products.
+  </h1>
 
-      <a href="https://github.com/saiswee" target="_blank" rel="noreferrer">
-        GitHub Profile
-      </a>
+  <p className="hero-subtitle">
+    I specialize in full-stack development, AI/ML systems, and IoT automation.
+  </p>
+
+  <div className="hero-points">
+    <p>⚡ AI + ML systems that solve real problems</p>
+    <p>⚡ Scalable full-stack applications</p>
+    <p>⚡ IoT & automation engineering</p>
+  </div>
+
+  <p className="hero-line">
+    Build fast. Think deep. Ship real systems.
+  </p>
+
+  <div className="hero-buttons">
+    <button onClick={() => scrollTo("projects")}>View Work</button>
+    <button className="secondary" onClick={() => scrollTo("contact")}>
+      Contact
+    </button>
+  </div>
+
+</section>
 
       {/* ABOUT */}
       <section className="section">
-        <h2>About Me</h2>
-        <p>
-          🎓 Third-Year Engineering Student<br />
-          💻 Python Developer | AI & ML Enthusiast | IoT Builder<br />
-          🚀 Passionate about building real-world intelligent systems<br />
-          🔭 Working on AI, ML & IoT projects<br/>
-          🌱 Improving DSA, ML models & system design<br/>  
-          🧠 Interested in smart automation & problem solving<br/>  
-          🎯 Goal: AI/ML Engineer / Software Developer<br/>
-        </p>
-      </section>
+  <h2 className="section-title">About Me</h2>
 
-      {/* SKILLS */}
-      <section className="section">
-        <h2>Skills</h2>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Python</li>
-          <li>C Programming</li>
-          <li>Machine Learning</li>
-          <li>DSA</li>
-          <li>Git & GitHub</li>
-          <li>IoT & Sensors</li>
-        </ul>
-      </section>
+  <div className="about-card">
+    <p>
+      I’m an engineering student focused on building intelligent systems using
+      AI, full-stack development, and IoT.
+    </p>
+
+    <p>
+      I enjoy turning complex ideas into clean, usable, real-world products that
+      feel simple but are deeply engineered under the hood.
+    </p>
+
+    <p>
+      My work revolves around system thinking — understanding how things break,
+      how they scale, and how they can be improved.
+    </p>
+
+    <p>
+      Currently exploring AI + software engineering to build production-ready,
+      impactful applications.
+    </p>
+
+    <p className="about-highlight">
+      Goal: Become an AI Engineer who builds real systems, not just projects.
+    </p>
+  </div>
+</section>
 
       {/* PROJECTS */}
       <section className="section" id="projects">
-        <h2>Projects</h2>
+        <h2 className="section-title">Projects</h2>
 
-        <div className="projects">
-          {projects.map((p, index) => (
-            <div className="card" key={index}>
+        <div className="case-grid">
+          {projects.map((p, i) => (
+            <div className="case-card" key={i}>
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
 
-              <div className="card-buttons">
-                <a href={p.github} target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
-              </div>
+              <a href={p.github} target="_blank" rel="noreferrer">
+                GitHub →
+              </a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CONTACT */}
-<section className="section" id="contact">
-  <h2>Contact Me</h2>
+      {/* ================= CREATIVE ================= */}
+<section className="section" id="creative">
 
-  <form ref={form} onSubmit={sendEmail} className="contact-form">
+  <h2 className="section-title">Creative Works</h2>
 
-    <input
-      type="text"
-      name="user_name"
-      placeholder="Your Name"
-      required
-    />
+  <div className="dual-slider">
 
-    <input
-      type="email"
-      name="user_email"
-      placeholder="Your Email"
-      required
-    />
+    {/* PHOTOGRAPHY SLIDER */}
+    <div className="slider-box">
+      <h3 className="slider-title">Photography</h3>
 
-    <textarea
-      name="message"
-      placeholder="Your Message"
-      required
-    />
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        spaceBetween={10}
+        slidesPerView={1}
+      >
+        {photos.map((img, i) => (
+          <SwiperSlide key={i}>
+            <div className="slide-card">
+              <img src={img} alt="photo" />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
 
-    <button type="submit">
-      Send Message
-    </button>
+    {/* DRAWINGS SLIDER */}
+    <div className="slider-box">
+      <h3 className="slider-title">Drawings</h3>
 
-  </form>
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        spaceBetween={10}
+        slidesPerView={1}
+      >
+        {drawings.map((img, i) => (
+          <SwiperSlide key={i}>
+            <div className="slide-card">
+              <img src={img} alt="drawing" />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+
+  </div>
+
 </section>
+
+      {/* CONTACT */}
+      <section className="section" id="contact">
+        <h2 className="section-title">Contact Me</h2>
+
+        <div className="contact-layout">
+
+          <div className="contact-info">
+
+  <h3>Let's Connect</h3>
+
+  <p>📱 +91 8008207324</p>
+
+  <p>📧 saiswee207@gmail.com</p>
+
+  <a
+    href="https://www.linkedin.com/in/saiswee-chandaraju"
+    target="_blank"
+    rel="noreferrer"
+  >
+    🔗 LinkedIn Profile
+  </a>
+
+  <a
+    href="https://github.com/saiswee"
+    target="_blank"
+    rel="noreferrer"
+  >
+    💻 GitHub Profile
+  </a>
+
+</div>
+
+          <form ref={form} onSubmit={sendEmail} className="contact-form">
+            <input name="user_name" placeholder="Your Name" required />
+            <input name="user_email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required />
+            <button type="submit">Send Message 🚀</button>
+          </form>
+
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+  <p>© 2026 Saiswee.dev — Crafted with React</p>
+</footer>
+
+      {/* SCROLL TO TOP */}
+      {showTop && (
+        <button className="scroll-top" onClick={scrollToTop}>
+          ↑
+        </button>
+      )}
+
     </div>
   );
 }

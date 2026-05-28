@@ -1,153 +1,676 @@
-body {
+/* ================= RESET ================= */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial;
   background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ================= APP ================= */
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+
+  z-index: 9999;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links span {
+  cursor: pointer;
+  color: #38bdf8;
+  transition: 0.3s;
+}
+
+.nav-links span:hover {
   color: white;
 }
 
-/* overall container */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding-top: 90px;
 }
 
-/* navbar */
-.navbar {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
-  background: #111827;
-  border-radius: 10px;
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38bdf8;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+.hero-title {
+  font-size: 55px;
+  margin: 20px 0;
+}
+
+.hero-subtitle {
+  color: #94a3b8;
   margin-bottom: 30px;
 }
 
-/* hero */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.hero h1 {
-  font-size: 45px;
-}
-
-.hero h3 {
-  color: #38bdf8;
-}
-
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
-  background: #38bdf8;
-  color: black;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* sections */
-.section {
-  margin-top: 60px;
-  padding: 20px;
-  text-align: center;
-}
-
-/* skills */
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  background: #1e293b;
-  margin: 5px;
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-
-/* project cards */
-.projects {
+/* ================= BUTTONS ================= */
+.hero-buttons {
   display: flex;
+  gap: 18px;
   justify-content: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+/* MAIN BUTTON (View Work) */
+.hero-buttons button:first-child {
+  padding: 14px 28px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #0b0f1a;
+
+  font-weight: 700;
+  font-size: 15px;
+
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+}
+
+/* HOVER */
+.hero-buttons button:first-child:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.4);
+}
+
+/* SECONDARY BUTTON (Contact) */
+.hero-buttons .secondary {
+  padding: 14px 28px;
+  border-radius: 999px;
+
+  background: transparent;
+  color: #38bdf8;
+
+  font-weight: 700;
+  font-size: 15px;
+
+  border: 1.5px solid rgba(56, 189, 248, 0.6);
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* HOVER */
+.hero-buttons .secondary:hover {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: #38bdf8;
+
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* ================= ABOUT ================= */
+.about-card {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 40px;
+  border-radius: 18px;
+
+  max-width: 850px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  text-align: left;
+
+  line-height: 1.9;
+  color: #cbd5e1;
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(10px);
+}
+
+/* each paragraph spacing improvement */
+.about-card p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* highlighted final line */
+.about-highlight {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
+/* add subtle breathing space between sections */
+.section {
+  margin-top: 140px;
+  padding: 0 10px;
+}
+
+/* ================= PROJECTS ================= */
+.case-grid {
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
-.card {
+.case-card {
   background: #1e293b;
   padding: 20px;
-  width: 260px;
-  border-radius: 15px;
-  text-align: left;
-  transition: 0.3s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 280px;
+  border-radius: 12px;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  background: #334155;
-}
-
-
-.buttons {
-  margin-top: 20px;
-}
-
-.buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-.secondary {
-  background: transparent;
-  border: 1px solid #38bdf8;
+.case-card a {
+  display: block;
+  margin-top: 10px;
   color: #38bdf8;
 }
-.section {
-  margin-top: 80px;
+
+/* ================= CREATIVE SECTION ================= */
+/* ================= DUAL SLIDER LAYOUT ================= */
+.dual-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: start;
 }
-.card-buttons {
-  margin-top: 10px;
+
+/* each slider box */
+.slider-box {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+  overflow: hidden;   /* IMPORTANT FIX */
+}
+
+/* title */
+.slider-title {
+  margin-bottom: 12px;
+  color: #38bdf8;
+}
+
+/* ================= FIXED SLIDER WINDOW ================= */
+.scroll-row {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 10px;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
-.card-buttons a {
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 14px;
-  background: #38bdf8;
-  color: black;
-  font-weight: bold;
+/* hide scrollbar */
+.scroll-row::-webkit-scrollbar {
+  display: none;
 }
 
-.card-buttons a:hover {
-  background: #0ea5e9;
+/* ================= SMALL IMAGE CARDS ================= */
+.img-box {
+  flex: 0 0 auto;
+
+  width: 140px;     /* 👈 SMALL SIZE FIX */
+  height: 140px;    /* 👈 SMALL SIZE FIX */
+
+  background: #0f172a;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px;
+
+  scroll-snap-align: start;
 }
 
-.contact-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #38bdf8;
-  color: black;
-  text-decoration: none;
+/* IMAGE ALWAYS FULL VISIBLE */
+.img-box img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;  /* KEY FIX (no crop) */
+
   border-radius: 8px;
+}
+
+/* ================= HOVER ================= */
+.img-box:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .dual-slider {
+    grid-template-columns: 1fr;
+  }
+}
+/* ================= SWIPER FIX ================= */
+.swiper {
+  width: 100%;
+}
+
+/* slide container */
+.gallery-card {
+  height: 320px;
+  background: #0f172a;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+/* IMPORTANT: show FULL IMAGE */
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #38bdf8;
+}
+
+/* ================= SWIPER SLIDER BOX ================= */
+
+/* make both sliders smaller */
+.dual-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* smaller container box */
+.slider-box {
+  background: #1e293b;
+  padding: 12px;
+  border-radius: 14px;
+
+  max-width: 420px;   /* 👈 LIMIT WIDTH */
+  margin: auto;
+}
+
+/* title smaller */
+.slider-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+/* reduce slide height */
+.slide-card {
+  width: 100%;
+  height: 220px;   /* 👈 REDUCED FROM 300px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0f172a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* image still fully visible */
+.slide-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+/* mobile fix */
+@media (max-width: 900px) {
+  .dual-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-box {
+    max-width: 100%;
+  }
+}
+
+/* ================= CONTACT ================= */
+/* ================= CONTACT SECTION (PREMIUM UPGRADE) ================= */
+
+#contact.section {
+  margin-top: 140px;
+}
+
+/* Title spacing */
+#contact .section-title {
+  margin-bottom: 40px;
+}
+
+/* Layout upgrade */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* LEFT CARD */
+/* ================= CONTACT INFO (UPGRADED CARD STYLE) ================= */
+
+.contact-info {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+
+  border-radius: 20px;
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Title style (if you add h3 later) */
+.contact-info h3 {
+  font-size: 22px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+/* Each line becomes a premium row */
+.contact-info p,
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #cbd5e1;
+  text-decoration: none;
+
+  font-size: 15px;
+
+  transition: 0.25s ease;
+}
+
+/* Hover effect */
+.contact-info p:hover,
+.contact-info a:hover {
+  transform: translateX(5px);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: white;
+}
+
+/* Icons glow effect */
+.contact-info p::before,
+.contact-info a::before {
+  content: "•";
+  color: #38bdf8;
   font-weight: bold;
 }
 
-.contact-btn:hover {
-  background: #0ea5e9;
+/* LinkedIn / GitHub special highlight */
+.contact-info a {
+  color: #38bdf8;
 }
 
+/* Optional spacing improvement */
+.contact-info {
+  line-height: 1.6;
+}
+/* RIGHT FORM CARD */
+.contact-form {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+
+  border-radius: 20px;
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* INPUTS */
+.contact-form input,
 .contact-form textarea {
-  height: 120px;
+  padding: 14px 16px;
+  border-radius: 12px;
+
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: white;
+  outline: none;
+
+  transition: 0.3s;
+}
+
+/* focus glow */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* TEXTAREA */
+.contact-form textarea {
+  min-height: 140px;
   resize: none;
+}
+
+/* BUTTON */
+.contact-form button {
+  padding: 14px;
+  border-radius: 12px;
+
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #0b0f1a;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+/* ================= SCROLL TO TOP ================= */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: black;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+
+  animation: floatBtn 2.5s infinite ease-in-out;
+
+  z-index: 9999;
+}
+
+.scroll-top:hover {
+  transform: scale(1.1);
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatBtn {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .dual-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 35px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+/* ================= FOOTER ================= */
+
+.footer {
+  margin-top: 100px;
+  padding: 35px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+  color: #94a3b8;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.footer p {
+  line-height: 1.8;
+}
+
+/* ===== PREMIUM SMALL ARROWS ===== */
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: transparent !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  color: #38bdf8;
+
+  transform: scale(0.75);
+
+  transition: 0.3s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(0.9);
+  color: white;
 }
