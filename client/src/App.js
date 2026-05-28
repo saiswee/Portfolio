@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import emailjs from "@emailjs/browser";
 import { useRef, useEffect, useState } from "react";
 import "./App.css";
@@ -225,7 +224,7 @@ function App() {
         {photos.map((img, i) => (
           <SwiperSlide key={i}>
             <div className="slide-card">
-              <img src={img} alt="photography work" />
+              <img src={img} alt="portfolio image" />
             </div>
           </SwiperSlide>
         ))}
@@ -245,7 +244,7 @@ function App() {
         {drawings.map((img, i) => (
           <SwiperSlide key={i}>
             <div className="slide-card">
-             <img src={img} alt="drawing work" />
+             <img src={img} alt="portfolio image"/>
             </div>
           </SwiperSlide>
         ))}
