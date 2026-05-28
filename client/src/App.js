@@ -196,7 +196,7 @@ function App() {
               {photos.map((img, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-card">
-                    <img src={img} alt="photography" />
+                    <img src={img} alt="portfolio work" />
                   </div>
                 </SwiperSlide>
               ))}
