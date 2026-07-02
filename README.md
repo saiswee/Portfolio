@@ -90,8 +90,4 @@ I enjoy solving real-world problems through technology and continuously improvin
 
 ## ⭐ Note
 
-This portfolio is continuously updated as I learn and build new projects.m/in/saiswee-chandaraju
-Email: saiswee207@gmail.com
-⭐ Note
-
 This portfolio is continuously updated as I learn and build new projects.
