@@ -52,8 +52,6 @@ Secure a good internship opportunity
 GitHub: https://github.com/saiswee
 LinkedIn: https://www.linkedin.com/in/saiswee-chandaraju
 Email: saiswee207@gmail.com
-
 ⭐ Note
+
 This portfolio is continuously updated as I learn and build new projects.
-
-
