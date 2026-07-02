@@ -49,15 +49,11 @@ Contribute to open-source projects
 Improve problem-solving skills in DSA
 Secure a good internship opportunity
 📫 Contact Me
-GitHub: saiswee
-LinkedIn: (add your LinkedIn link here)
-Email: (add your email here)
-⭐ Note
+GitHub: https://github.com/saiswee
+LinkedIn: https://www.linkedin.com/in/saiswee-chandaraju
+Email: saiswee207@gmail.com
 
+⭐ Note
 This portfolio is continuously updated as I learn and build new projects.
 
-🚀 How to Run This Project
-git clone https://github.com/saiswee/Portfolio.git
-cd Portfolio
-open index.html
 
